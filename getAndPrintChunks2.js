@@ -7,7 +7,7 @@ var requestOptions = {
 };
 
 
-function getAndPrintHTML(options){
+function getAndPrintHTML(options, printHTML){
      
     var data = '';
 
@@ -23,13 +23,14 @@ function getAndPrintHTML(options){
     
         //when we have recieved all the data
         response.on('end', function(){
-            return data;
+            printHTML(data);
     
         });
     });
 }
 
+function printHTML(html) {
+    console.log(html);
+}
 
-var syntanris = getAndPrintHTML(requestOptions);
-
-console.log(syntanris);
+getAndPrintHTML(requestOptions, printHTML);
