@@ -18,5 +18,8 @@ https.get(requestOptions, function(response){
     //when we have recieved all the data
     response.on('end', function(){
         console.log("resonse stream has ended");
+
+
+        
     });
 });
